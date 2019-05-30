@@ -38,11 +38,14 @@ colnames(counts) <- species
 
 rm(x)
 
+env_data <- data.frame(matrix(nrow = 9, ncol = 2))
 shore_zones <- rep(c("upper", "middle", "lower"),3)
-env_data <- data.frame(matrix(c(rep(c("covered", "exposed"),3),"exposed","exposed","exposed")), row.names = NULL) %>%
+exposure <- data.frame(matrix(c(rep(c("covered", "exposed"),3),"exposed","exposed","exposed")), row.names = NULL) %>%
         sample_n(9) 
-names(env_data) <- c("exposure")       
-
+names(exposure) <- c("exposure")       
+env_data[1] <- shore_zones
+env_data[2] <- exposure
+names(env_data) <- c("shore_zones", "exposure")
 
 write_rds(counts, "./count_data.RDS")
 write_rds(env_data, "./env_data.RDS")
