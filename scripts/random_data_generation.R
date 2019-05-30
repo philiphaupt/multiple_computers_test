@@ -1,6 +1,7 @@
 
 
 #some Code
+rm(list=ls())
 
 #make-up data from shore exploration
 #some data
@@ -38,13 +39,17 @@ colnames(counts) <- species
 
 rm(x)
 
-env_data <- data.frame(matrix(nrow = 9, ncol = 2))
+
+env_data <- data.frame(matrix(nrow = 9, ncol = 3))
 shore_zones <- rep(c("upper", "middle", "lower"),3)
 exposure <- data.frame(matrix(c(rep(c("covered", "exposed"),3),"exposed","exposed","exposed")), row.names = NULL) %>%
         sample_n(9) 
 names(exposure) <- c("exposure")       
+dist_pier <-seq(3,27, by = 3)
+
 env_data[1] <- shore_zones
 env_data[2] <- exposure
+env_data[3] <- dist_pier
 names(env_data) <- c("shore_zones", "exposure")
 
 write_rds(counts, "./count_data.RDS")
