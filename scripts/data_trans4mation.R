@@ -16,7 +16,6 @@ plot(sp_accum)
 
 
 #distance Jaccard for presence absence
-
 dist <- vegdist(counts, method = "jaccard", binary = TRUE)
 
 
