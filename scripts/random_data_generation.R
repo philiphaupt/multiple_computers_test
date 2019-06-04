@@ -87,7 +87,7 @@ comm_data[11] <- c(sample(rare_species, 9, replace = T), sample(common_species, 
 
 # Abundant species
 #comm_data$`Semibalanus balanoides` <- sample_n(abundant_species, 27)
-comm_data[3] <- c(sample(abundant_species, 9, replace = T), sample(very_abundant, 9, replace = T), sample(rare_species, 9, replace = T))
+comm_data[3] <- c(sample(common_species, 9, replace = T), sample(very_abundant, 9, replace = T), sample(rare_species, 9, replace = T))
 #comm_data$`Lipophrys pholis`
 comm_data[12] <- c(sample(very_rare, 9, replace = T), sample(very_rare, 9, replace = T), sample(rare_species, 9, replace = T))
 
